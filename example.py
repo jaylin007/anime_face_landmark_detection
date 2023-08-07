@@ -4,7 +4,7 @@ from torchvision import transforms
 import cv2
 from PIL import Image, ImageDraw
 from CFA import CFA
-import animeface
+# import animeface
 
 
 # param

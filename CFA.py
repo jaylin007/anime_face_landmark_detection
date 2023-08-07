@@ -44,7 +44,8 @@ class CFA(nn.Module):
         
         # initialize weights
         if checkpoint_name:
-            snapshot = torch.load(checkpoint_name)
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            snapshot = torch.load(checkpoint_name, map_location=device)
             self.load_state_dict(snapshot['state_dict'])
         else:
             self.load_weight_from_dict()
